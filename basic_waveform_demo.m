@@ -1,5 +1,5 @@
 % basic tutorial on sampling and generating discrete waveform in MATLAB
-
+clear all; close all;
 %A. defining sampling rate and input range            
 fs = 100;   % 1)define the number of points that we want to sample
             % in one unit length for our waveform. This is called the
@@ -84,12 +84,12 @@ wx = 2*pi*fx; % angular frequency x
 fy=1; % wave frequency in y 
 wy = 2*pi*fy; % wave frequency in x
 
-I1=zeros(px,py); 
+I1=zeros(py,px); 
 % 1 general programming
-for i = 1:px
-    y=(i-1)*dx;
-    for ii = 1:py
-        x=(ii-1)*dy;
+for i = 1:py
+    y=(i-1)*dy;
+    for ii = 1:px
+        x=(ii-1)*dx;
         I1(i,ii) = sin((wx*x)/l+(wy*y)/l); % sinusoid equation in 2 dimension
     end
 end
@@ -98,7 +98,7 @@ figure(2)
 imshow(I1) 
 
 % 2 Matlab
-[Y,X] = meshgrid((0:l/py:l-1/py),(0:l/px:l-1/px)); %meshgrid replicates these 
+[X,Y] = meshgrid((0:l/px:l-1/px),(0:l/py:l-1/py)); %meshgrid replicates these 
 I2 = sin((wx*X)/l+(wy*Y)/l);
 figure(3);imshow(I2);
 
