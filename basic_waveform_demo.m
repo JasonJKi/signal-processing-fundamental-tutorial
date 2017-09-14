@@ -44,14 +44,16 @@ subplot(3,1,1);     % subplot gridizes the the figure window row by column.
 plot(x,y1,'o-')
 grid on;
 subplot(3,1,2)
-grid on;
 plot(x,y2,'or-')
+grid on;
+
 subplot(3,1,3)
 hold on;    % the hold function allows you to draw multiple figures on to the plot
             % by default. hold off by default.
 plot(x,y1,'o-')
 plot(x,y2,'or-')
 legend('sin','cos')
+grid on;
 
 % Excersises
 % 1. run the plot above
@@ -71,7 +73,7 @@ legend('sin','cos')
 px = 500;   % 1) define the number of points that we want to sample
             % in one unit length for our waveform. In image, 
             % this is referred as pixels.
-py = 500; 
+py = 700; 
 l =  1      % 2) we define the length of x and y 1 which is also the unit 
             % length of our input.
 dx = l/px; % rate of change in x
@@ -96,7 +98,7 @@ figure(2)
 imshow(I1) 
 
 % 2 Matlab
-[X,Y] = meshgrid((0:l/px:l-1/px),(0:l/py:l-1/py)); %meshgrid replicates these 
+[Y,X] = meshgrid((0:l/py:l-1/py),(0:l/px:l-1/px)); %meshgrid replicates these 
 I2 = sin((wx*X)/l+(wy*Y)/l);
 figure(3);imshow(I2);
 
