@@ -1,6 +1,6 @@
 % basic tutorial on sampling and generating discrete waveform in MATLAB
 
-%A. defining sampling rate and input range            
+%A. sampling            
 fs = 100;   % 1)define the number of points that we want to sample
             % in one unit length for our waveform. This is called the
             % sampling rate (fs).
@@ -18,7 +18,7 @@ x = -l:dx:l; % 4) we set the range of our x axis. Here, I chose
             % In most general programming, this would need to be done using a
             % for loop. Excersise: Try making the array above using a for loop.
 
-%B. sinuosidal waveform
+%B. waveform
 f = 2;      % 1) we define the frequency of our waveform.
 w = (2*pi*f);     % 2) we set the angular frequency which is a scalar measure
             % of the rotation rate.
@@ -72,10 +72,11 @@ px = 500;   % 1) define the number of points that we want to sample
             % in one unit length for our waveform. In image, 
             % this is referred as pixels.
 py = 500; 
-l =  1      % 2) we define the length of x and y 1 which is also the unit 
-            % length of our input.
+l =  1      % 2) we define the length of 1 unit to 1.
+lx = 3     % 3) total length of x
+ly = 3   % 4) total length of y
 dx = l/px; % rate of change in x
-dy = l/py; % rate of change in y
+dy = l/py; % rate of change in y            % 
             
 fx=1; % wave frequency in x
 wx = 2*pi*fx; % angular frequency x
@@ -85,10 +86,10 @@ wy = 2*pi*fy; % wave frequency in x
 I1=zeros(px,py); 
 % 1 general programming
 for i = 1:px
-    y=(i-1)*dx;
+    y=(i-1)*dx*lx;
     for ii = 1:py
-        x=(ii-1)*dy;
-        I1(i,ii) = sin((wx*x)/l+(wy*y)/l); % sinusoid equation in 2 dimension
+        x=(ii-1)*dy*ly;
+        I1(i,ii) = sin((wx*x)/l+(wy*y)/l); %plugging circle equation in to complete the equation 
     end
 end
 
@@ -96,7 +97,7 @@ figure(2)
 imshow(I1) 
 
 % 2 Matlab
-[X,Y] = meshgrid((0:l/px:l-1/px),(0:l/py:l-1/py)); %meshgrid replicates these 
+[X,Y] = meshgrid((0:lx/px:lx-1/px),(0:ly/py:ly-1/py)); %meshgrid replicates these 
 I2 = sin((wx*X)/l+(wy*Y)/l);
 figure(3);imshow(I2);
 
