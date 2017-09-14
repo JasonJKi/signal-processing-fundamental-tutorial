@@ -60,13 +60,13 @@ grid on;
 % 2. generate a sinusoids of .5Hz ,1 Hz, 4Hz and 10Hz. 
 % 3. generate a sinusoid with period .5, 1, 4, 10. (hint period = 1/frequency)
 % 4. change the theta to see what happens to the sinusoid
-% 4. generate a 5 hz sinusoid but adjust the sampling rate (fs) to 50,25,11,8,5 Hz.
-% 5. change the theta of the y1 to pi/2. observe what happens. Which way
+% 5. generate a 5 hz sinusoid but adjust the sampling rate (fs) to 50,25,11,8,5 Hz.
+% 6. change the theta of the y1 to pi/2. observe what happens. Which way
 % does the function shift.
-% 6. try changing the xaxis so that the range is 0 to two unit circles in
+% 7. try changing the xaxis so that the range is 0 to two unit circles in
 % length. play around with change the x range.
-% 7. generate a sinusoid plot containing 2,3,7,11 full waves within range indicated in 2.
-% 8. change the sampling scale to time series.
+% 8. generate a sinusoid plot containing 2,3,7,11 full waves within range indicated in 2.
+% 9. change the sampling scale to time series.
 
 % generating a sin waveform in 2 dimensions.
 % sampling
