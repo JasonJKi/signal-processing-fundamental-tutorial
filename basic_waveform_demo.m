@@ -97,8 +97,6 @@ figure(2)
 imshow(I1) 
 
 % 2 Matlab
-[X,Y] = meshgrid((0:l/fs:px-1/fs),(0:l/fs:py-1/fs)); %meshgrid replicates these 
+[X,Y] = meshgrid((0:l:px-1)/fs,(0:l:py-1)/fs); %meshgrid replicates these 
 I2 = sin((wx*X)/l+(wy*Y)/l);
 figure(3);imshow(I2);
-
-
