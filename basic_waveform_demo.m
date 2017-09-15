@@ -70,10 +70,10 @@ grid on;
 
 % generating a sin waveform in 2 dimensions.
 % sampling
-px = 500;   % 1) pixels - define the number of picture elements of our image.
-py = 700; 
+px = 500;   % 1) pixels - define the number of picture elements of our image in x and y.
+py = 700;   
 l =  1      % 2) we define the length of x and y 1 which is also the unit 
-            % length of our input.
+            % length of our input. This is a scale factor that will determine the range of our input
 fs = 10    % sampling rate of our image
 dx = l/fs; % rate of change in x
 dy = l/fs; % rate of change in y
