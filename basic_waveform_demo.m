@@ -70,14 +70,13 @@ grid on;
 
 % generating a sin waveform in 2 dimensions.
 % sampling
-px = 500;   % 1) define the number of points that we want to sample
-            % in one unit length for our waveform. In image, 
-            % this is referred as pixels.
+px = 500;   % 1) pixels - define the number of picture elements of our image.
 py = 700; 
 l =  1      % 2) we define the length of x and y 1 which is also the unit 
             % length of our input.
-dx = l/px; % rate of change in x
-dy = l/py; % rate of change in y
+fs = 10    % sampling rate of our image
+dx = l/fs; % rate of change in x
+dy = l/fs; % rate of change in y
             
 fx=1; % wave frequency in x
 wx = 2*pi*fx; % angular frequency x
@@ -98,7 +97,7 @@ figure(2)
 imshow(I1) 
 
 % 2 Matlab
-[X,Y] = meshgrid((0:l/px:l-1/px),(0:l/py:l-1/py)); %meshgrid replicates these 
+[X,Y] = meshgrid((0:l/fs:px-1/fs),(0:l/fs:py-1/fs)); %meshgrid replicates these 
 I2 = sin((wx*X)/l+(wy*Y)/l);
 figure(3);imshow(I2);
 
