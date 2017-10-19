@@ -1,7 +1,7 @@
 % simplest way of writing the convolution function
 clear all
-x=[1,2,3,4,5,6,7,6,5,4,3,2,1];
-f=[2 2 2 2 2 2 ]
+x=[1 2 3 4 3 2 1];
+f=[0 0 0 2 0 0 0]
 
 T=length(x)
 t=length(f) 
